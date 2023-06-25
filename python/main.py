@@ -3,6 +3,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pymongo import MongoClient
+import base64
+import datetime
+import os
 
 app = FastAPI()
 
@@ -14,20 +17,27 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+ATLAS_URL="mongodb+srv://{login}:{pw}@clusterdan.lpuyh34.mongodb.net/test".format(login= base64.b64decode(os.getenv("MONGODB_LOG")).decode("utf-8") , pw = base64.b64decode(os.getenv("MONGODB_PW")).decode("utf-8"))
+
 # MongoDB connection
-client = MongoClient("mongodb://localhost:27017")
-db = client["wedding_db"]
-collection = db["attendees"]
+@app.on_event("startup")
+def startup_db_client():
+    app.mongodb_client = MongoClient(ATLAS_URL)
+    app.database = app.mongodb_client["wedding_db"] 
+    print("Connected to the MongoDB database!")
+    
+collection = "attendees"
 
 
 # Data model for the registration form
 class RegistrationForm(BaseModel):
-    name: str
-    adults: int
-    children: int
-    civil_service: bool
-    religious_service: bool
-    evening_party: bool
+    nom: str
+    prenom : str
+    adultes: int
+    enfants : int
+    mairie : bool
+    synagogue : bool
+    reception : bool
 
 
 # Route to handle registration form submission
@@ -35,16 +45,17 @@ class RegistrationForm(BaseModel):
 def register_attendance(form: RegistrationForm):
     # Store the form data in MongoDB
     attendee_data = {
-        "name": form.name,
-        "adults": form.adults,
-        "children": form.children,
-        "civil_service": form.civil_service,
-        "religious_service": form.religious_service,
-        "evening_party": form.evening_party,
+        "nom": form.nom,
+        "prenom" : form.prenom, 
+        "adultes": form.adultes,
+        "enfants": form.enfants,
+        "mairie": form.mairie,
+        "synagogue": form.synagogue,
+        "reception": form.reception,
     }
-    collection.insert_one(attendee_data)
+    app.database[collection].insert_one(attendee_data)
     
-    return {"message": "Attendance registered successfully"}
+    return {"message": "Votre réponse a été enregistrée"}
 
 
 # Run the FastAPI server
