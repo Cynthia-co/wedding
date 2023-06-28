@@ -2,14 +2,14 @@ import React from 'react';
 
 const Nav = () => {
     return (
-        <div>
-            <ul>
-                <li>Home</li>
-                <li>Notre histoire</li>
-                <li>Invitation</li>
-                <li>Confirmer ma présence</li>
-                <li>Livre d'or</li>
-                <li>Nous contacter</li>
+        <div className='nav'>
+            <ul className='nav_global'>
+                <li className='nav_item'>Home</li>
+                <li className='nav_item'>Notre histoire</li>
+                <li className='nav_item'>Invitation</li>
+                <li className='nav_item'>Confirmer ma présence</li>
+                <li className='nav_item'>Livre d'or</li>
+                <li className='nav_item'>Nous contacter</li>
             </ul>
         </div>
     );

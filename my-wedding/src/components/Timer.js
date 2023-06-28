@@ -2,52 +2,57 @@ import React, { useState, useEffect } from 'react';
 
 
 const Timer = () => {
-   
-//     const calculateTimeLeft = () => {
-//         let year = new Date().getFullYear();
-//         const difference = +new Date(`17/12/2023`) - +new Date();
-//         let timeLeft = {};
+   // Timer.js
+  const countdownDate = new Date('December 17, 2023 12:00:00').getTime();
+  const [days, setDays] = useState(0);
+  const [hours, setHours] = useState(0);
+  const [minutes, setMinutes] = useState(0);
 
-//         if(difference > 0) {
-//             timeLeft = {
-//                 days: Math.floor(difference / (1000 * 60 * 60 *24)),
-//                 hours: Math.floor((difference / (1000 * 60 * 60 )) % 24),
-//                 minutes: Math.floor((difference / 1000 / 60) % 60),
-//                 seconds: Math.floor((difference / 1000) % 60)
-//             }
-//         }
-//         return timeLeft;
-//     };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
 
-//     const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
-//     const [year] = useState(new Date().getFullYear());
-//     useEffect(() => {
-//         const timer = setTimeout(() => {
-//           setTimeLeft(calculateTimeLeft());
-//         }, 1000);
-//         return () => clearTimeout(timer);
-//       });
+      if (distance > 0) {
+        const daysRemaining = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hoursRemaining = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutesRemaining = Math.floor(
+          (distance % (1000 * 60 * 60)) / (1000 * 60)
+        );
 
-//       const timerComponents = [];
-//       Object.keys(timeLeft).forEach((interval) => {
-//         if (!timeLeft[interval]) {
-//           return;
-//         }
-      
-//         timerComponents.push(
-//           <span>
-//             {timeLeft[interval]} {interval}{" "}
-//           </span>
-//         );
-//       });
+        setDays(daysRemaining);
+        setHours(hoursRemaining);
+        setMinutes(minutesRemaining);
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000);
 
-      
-//  return (
-//      <div>
-//     //  {timerComponents.length ? timerComponents : <span>Time's up!</span>}
-//    </div>
-//  )
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return (
+    <div className="Timer">
+      <h2>Temps restant avant la houppa : </h2>
+      <div>
+        <div>{days}</div>
+        <span>Days</span>
+      </div>
+      <div>
+        <div>{hours}</div>
+        <span>Hours</span>
+      </div>
+      <div>
+        <div>{minutes}</div>
+        <span>Minutes</span>
+      </div>
+    </div>
+  );
 }
 
-
 export default Timer;
+

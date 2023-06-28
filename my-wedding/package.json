@@ -14,17 +14,18 @@
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.9",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^1.1.5",
     "react-select": "^5.7.2",
     "react-timer-hook": "^3.0.5",
-    "sass": "^1.62.1",
+    "sass": "^1.63.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch  ../sass/main.scss:./src/main.css"
   },
   "eslintConfig": {
     "extends": [
