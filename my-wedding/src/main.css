@@ -1,0 +1,11 @@
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.nav_global {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=main.css.map */
