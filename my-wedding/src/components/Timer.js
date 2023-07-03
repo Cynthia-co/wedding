@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 
 const Timer = () => {
-   // Timer.js
-  const countdownDate = new Date('December 17, 2023 12:00:00').getTime();
+  // Timer.js
+  const countdownDate = new Date("December 17, 2023 12:00:00").getTime();
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -36,23 +35,24 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="Timer">
+    <div className="timer">
       <h2>Temps restant avant la houppa : </h2>
-      <div>
-        <div>{days}</div>
-        <span>Days</span>
-      </div>
-      <div>
-        <div>{hours}</div>
-        <span>Hours</span>
-      </div>
-      <div>
-        <div>{minutes}</div>
-        <span>Minutes</span>
+      <div className="timer__entier">
+        <div className="timer__item">
+          <div>{days}</div>
+          <span>Jours</span>
+        </div>
+        <div className="timer__item">
+          <div>{hours}</div>
+          <span>Heures</span>
+        </div>
+        <div className="timer__item">
+          <div>{minutes}</div>
+          <span>Minutes</span>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default Timer;
-

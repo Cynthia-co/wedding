@@ -3,13 +3,12 @@ import React from 'react';
 const Nav = () => {
     return (
         <div className='nav'>
-            <ul className='nav_global'>
-                <li className='nav_item'>Home</li>
-                <li className='nav_item'>Notre histoire</li>
-                <li className='nav_item'>Invitation</li>
-                <li className='nav_item'>Confirmer ma présence</li>
-                <li className='nav_item'>Livre d'or</li>
-                <li className='nav_item'>Nous contacter</li>
+            <ul className='nav__global'>
+                <li className='nav__item'>Home</li>
+                <li className='nav__item'>Nous</li>
+                <li className='nav__item'>Invitation</li>
+                <li className='nav__item'>Répondre</li>
+                <li className='nav__item'>Contact</li>
             </ul>
         </div>
     );

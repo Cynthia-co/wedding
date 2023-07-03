@@ -1,0 +1,11 @@
+.timer{
+    display: flex;
+    &__entier{
+        display: flex;
+        flex-direction: row;
+        
+    }
+    &__item{
+        padding: 2%;
+    }
+}

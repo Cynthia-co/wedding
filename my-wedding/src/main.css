@@ -1,11 +1,48 @@
+.all_ceremonies {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.timer {
+  display: flex;
+}
+.timer__entier {
+  display: flex;
+  flex-direction: row;
+}
+.timer__item {
+  padding: 2%;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.logo {
+  width: 11%;
+}
+
 .nav {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
-
-.nav_global {
+.nav__global {
   list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+.nav__item {
+  margin: 2%;
 }
 
 /*# sourceMappingURL=main.css.map */
