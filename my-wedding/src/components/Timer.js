@@ -36,7 +36,7 @@ const Timer = () => {
 
   return (
     <div className="timer">
-      <h2>Temps restant avant la houppa : </h2>
+      {/* <h2>Temps restant avant la houppa : </h2> */}
       <div className="timer__entier">
         <div className="timer__item">
           <div>{days}</div>

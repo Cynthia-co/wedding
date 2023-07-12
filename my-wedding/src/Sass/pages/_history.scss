@@ -1,0 +1,11 @@
+@import "../utils/variables";
+
+.history{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    &__item{
+        display: flex;
+        flex-direction: column;
+    }
+}

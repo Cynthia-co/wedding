@@ -1,5 +1,26 @@
+@import "../utils/variables";
+
 .form{
     display: flex;
     flex-direction: column;
     margin-left: 2%;
+    align-items: center;
+    // background: linear-gradient(217deg $color-background1 30%, 170deg $color-background2 75%);
+}
+.form__item, input{
+    padding-bottom: 2%;
+}
+.form_evening{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+label{
+    display: block;
+    float: left;
+    width: 300px;
+    margin-top: 2%;
+}
+.checkbox{
+    display: inline;
+    float: none;
 }

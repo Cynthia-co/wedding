@@ -1,0 +1,12 @@
+@import "../utils/variables";
+
+.button-submit{
+    margin: 4%;
+    padding: 3%;
+    background: $color-background1;
+    border-radius: 15px;
+    font-family: $font-primary;
+    font-weight: bold;
+    font-size: 30px;
+    width: 300px;
+}
