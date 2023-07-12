@@ -31,13 +31,14 @@ collection = "attendees"
 
 # Data model for the registration form
 class RegistrationForm(BaseModel):
-    nom: str
+    name: str
     prenom : str
-    adultes: int
-    enfants : int
-    mairie : bool
-    synagogue : bool
-    reception : bool
+    adultsEvening: int
+    childrenEvening : int
+    civilService : bool
+    religiousService : bool
+    eveningParty : bool
+    message : str
 
 
 # Route to handle registration form submission
@@ -45,13 +46,14 @@ class RegistrationForm(BaseModel):
 def register_attendance(form: RegistrationForm):
     # Store the form data in MongoDB
     attendee_data = {
-        "nom": form.nom,
+        "nom": form.name,
         "prenom" : form.prenom, 
-        "adultes": form.adultes,
-        "enfants": form.enfants,
-        "mairie": form.mairie,
-        "synagogue": form.synagogue,
-        "reception": form.reception,
+        "adultes_soiré": form.adultsEvening,
+        "enfants_soiré": form.childrenEvening,
+        "mairie": form.civilService,
+        "synagogue": form.religiousService,
+        "reception": form.eveningParty,
+        "message": form.message
     }
     app.database[collection].insert_one(attendee_data)
     
@@ -63,3 +65,6 @@ if __name__ == "__main__":
     import uvicorn
     
     uvicorn.run("main:app", host="0.0.0.0", port=3000)
+
+
+
