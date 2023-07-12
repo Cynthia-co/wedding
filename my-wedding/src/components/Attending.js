@@ -7,7 +7,6 @@ function Attending() {
   const [prenom, setPrenom] = useState("");
   const [adultsCivil, setAdultsCivil] = useState(0);
   const [adultsEvening, setAdultsEvening] = useState(0);
-  const [childrenCivil, setChildrenCivil] = useState(0);
   const [childrenEvening, setChildrenEvening] = useState(0);
   const [civilService, setCivilService] = useState(null);
   const [religiousService, setReligiousService] = useState(null);
@@ -23,7 +22,6 @@ function Attending() {
         prenom,
         adultsCivil,
         adultsEvening,
-        childrenCivil,
         childrenEvening,
         civil_service: civilService === "Yes",
         religious_service: religiousService === "Yes",
@@ -37,8 +35,7 @@ function Attending() {
       setPrenom("");
       setAdultsCivil(0);
       setAdultsEvening(0);
-      setChildrenCivil(0);
-      setChildrenCivil(0);
+      setChildrenEvening(0);
       setCivilService(null);
       setReligiousService(null);
       setEveningParty(null);
@@ -90,7 +87,7 @@ function Attending() {
           />
         </div>
         <div className="form__item">
-          <label htmlFor="adults">Nombre d'adultes:</label>
+          <label htmlFor="adults">Nombre de personnes:</label>
           <input
             type="number"
             id="adults"
@@ -99,7 +96,7 @@ function Attending() {
             required
           />
         </div>
-        <div className="form__item">
+        {/* <div className="form__item">
           <label htmlFor="children">Nombre d'enfants:</label>
           <input
             type="number"
@@ -108,7 +105,7 @@ function Attending() {
             onChange={(e) => setChildrenCivil(Number(e.target.value))}
             required
           />
-        </div>
+        </div> */}
         <div>
           <label htmlFor="religiousService">Synagogue :</label>
           <label className="checkbox" htmlFor="religiousServiceYes">Oui</label>
