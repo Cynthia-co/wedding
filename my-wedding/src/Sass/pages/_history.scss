@@ -7,5 +7,11 @@
     &__item{
         display: flex;
         flex-direction: column;
+        }
     }
+
+
+.history__item img{
+    border-radius: 50% ;
+    box-shadow: 0 0 8px 8px white inset;
 }

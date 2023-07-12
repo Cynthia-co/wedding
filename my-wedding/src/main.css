@@ -68,6 +68,7 @@ label {
   flex-direction: row;
   justify-content: space-around;
   background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  background-size: cover;
 }
 
 .logo {
@@ -98,6 +99,7 @@ h1 {
   flex-direction: column;
   margin: 2%;
   background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  background-size: cover;
 }
 .contact__detail {
   display: flex;
@@ -108,6 +110,9 @@ h1 {
 
 .all_ceremonies {
   background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  display: flex;
+  justify-content: space-around;
+  background-size: cover;
 }
 
 .history {
@@ -118,6 +123,11 @@ h1 {
 .history__item {
   display: flex;
   flex-direction: column;
+}
+
+.history__item img {
+  border-radius: 50%;
+  box-shadow: 0 0 8px 8px white inset;
 }
 
 /*# sourceMappingURL=main.css.map */
