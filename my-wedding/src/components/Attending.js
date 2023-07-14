@@ -12,7 +12,8 @@ function Attending() {
   const [religiousService, setReligiousService] = useState(null);
   const [eveningParty, setEveningParty] = useState(null);
   const [message, setMessage] = useState("");
-
+  const [submitted, setSubmitted] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleInvitCivil = (value) => {
     if (value >= 0) {
@@ -31,12 +32,12 @@ function Attending() {
     }
   };
 
- 
   const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    
-
+    if ((civilService === 'Yes' && adultsCivil === 0 ) || (eveningParty === 'Yes'  && adultsEvening === 0) ){
+      setErrorMessage('Please provide the number of adults.');
+      return;
+    }
 
     try {
       const response = await axios.post("http://localhost:3000/register", {
@@ -65,14 +66,17 @@ function Attending() {
       setReligiousService(null);
       setEveningParty(null);
       setMessage("");
+      setErrorMessage('Registration successful!');
+      setSubmitted(true); 
     } catch (error) {
-      setMessage("An error occurred. Please try again.");
+      setErrorMessage("An error occurred. Please try again.");
     }
   };
 
   return (
     <div className="form" id="form">
       <h1>Votre réponse : </h1>
+      {!submitted ? (
       <form onSubmit={handleSubmit}>
         <div className="form__item">
           <label htmlFor="name">Nom:</label>
@@ -96,14 +100,18 @@ function Attending() {
         </div>
         <div>
           <label htmlFor="civilService">Mairie :</label>
-          <label className="checkbox" htmlFor="civilServiceYes">Oui</label>
+          <label className="checkbox" htmlFor="civilServiceYes">
+            Oui
+          </label>
           <input
             type="checkbox"
             id="civilServiceYes"
             checked={civilService === "Yes"}
             onChange={() => setCivilService("Yes")}
           />
-          <label className="checkbox" htmlFor="civilServiceNo">Non</label>
+          <label className="checkbox" htmlFor="civilServiceNo">
+            Non
+          </label>
           <input
             type="checkbox"
             id="civilServiceNo"
@@ -119,7 +127,7 @@ function Attending() {
             value={adultsCivil}
             // onChange={(e) => setAdultsCivil(Number(e.target.value))}
             onChange={(e) => handleInvitCivil(Number(e.target.value))}
-            required={civilService === 'Yes' }
+            required={civilService === "Yes"}
           />
         </div>
         {/* <div className="form__item">
@@ -134,14 +142,18 @@ function Attending() {
         </div> */}
         <div>
           <label htmlFor="religiousService">Synagogue :</label>
-          <label className="checkbox" htmlFor="religiousServiceYes">Oui</label>
+          <label className="checkbox" htmlFor="religiousServiceYes">
+            Oui
+          </label>
           <input
             type="checkbox"
             id="religiousServiceYes"
             checked={religiousService === "Yes"}
             onChange={() => setReligiousService("Yes")}
           />
-          <label  className="checkbox" htmlFor="religiousServiceNo">Non</label>
+          <label className="checkbox" htmlFor="religiousServiceNo">
+            Non
+          </label>
           <input
             type="checkbox"
             id="religiousServiceNo"
@@ -152,14 +164,18 @@ function Attending() {
 
         <div className="form_evening">
           <label htmlFor="eveningParty">Soirée :</label>
-          <label className="checkbox" htmlFor="eveningPartyYes">Oui</label>
+          <label className="checkbox" htmlFor="eveningPartyYes">
+            Oui
+          </label>
           <input
             type="checkbox"
             id="eveningPartyYes"
             checked={eveningParty === "Yes"}
             onChange={() => setEveningParty("Yes")}
           />
-          <label className="checkbox" htmlFor="eveningPartyNo">Non</label>
+          <label className="checkbox" htmlFor="eveningPartyNo">
+            Non
+          </label>
           <input
             type="checkbox"
             id="eveningPartyNo"
@@ -175,7 +191,7 @@ function Attending() {
             value={adultsEvening}
             // onChange={(e) => setAdultsEvening(Number(e.target.value))}
             onChange={(e) => handleAdultsChange(Number(e.target.value))}
-            required={ eveningParty === 'Yes'}
+            required={eveningParty === "Yes"}
           />
         </div>
         <div className="form__item">
@@ -197,9 +213,14 @@ function Attending() {
             rows={4}
           />
         </div>
-        <button className="button-submit" type="submit">Envoyer!</button>
+        <button className="button-submit" type="submit">
+          Envoyer!
+        </button>
       </form>
-      {message && <p>{message}</p>}
+      ) : ( 
+        <p>Thank you for your registration!</p>
+        )}
+      {errorMessage && <p>{errorMessage}</p>}
     </div>
   );
 }

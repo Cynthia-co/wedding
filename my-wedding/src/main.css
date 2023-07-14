@@ -12,16 +12,68 @@
 }
 
 .timer {
-  background: #ddd;
-  border: 1px solid #ddd;
   display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .timer__entier {
   display: flex;
   flex-direction: row;
 }
+
 .timer__item {
-  padding: 2%;
+  position: relative;
+  margin: 0 5px;
+}
+
+.timer__item:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(252, 247, 235);
+  transform-origin: top;
+  transform: perspective(800px) rotateX(0deg);
+  transition: transform 0.5s ease;
+}
+
+.timer__item:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background-color: rgb(252, 247, 235);
+  transform-origin: bottom;
+  transform: perspective(800px) rotateX(0deg);
+  transition: transform 0.5s ease;
+}
+
+.timer__item.active:before {
+  transform: perspective(800px) rotateX(-90deg);
+}
+
+.timer__item.active:after {
+  transform: perspective(800px) rotateX(90deg);
+}
+
+.timer__digit {
+  font-size: 48px;
+  font-weight: bold;
+  color: rgb(156, 138, 33);
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(252, 247, 235);
+}
+
+.timer__separator {
+  font-size: 48px;
+  font-weight: bold;
+  color: rgb(156, 138, 33);
 }
 
 .form {

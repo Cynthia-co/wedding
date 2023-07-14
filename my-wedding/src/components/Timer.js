@@ -35,23 +35,37 @@ const Timer = () => {
   }, []);
 
   return (
+    // <div className="timer">
+    //   <div className="timer__entier">
+    //     <div className="timer__item">
     <div className="timer">
-      {/* <h2>Temps restant avant la houppa : </h2> */}
-      <div className="timer__entier">
-        <div className="timer__item">
-          <div>{days}</div>
-          <span>Jours</span>
-        </div>
-        <div className="timer__item">
-          <div>{hours}</div>
-          <span>Heures</span>
-        </div>
-        <div className="timer__item">
-          <div>{minutes}</div>
-          <span>Minutes</span>
-        </div>
+    <div className="timer__entier">
+      <div className="timer__item active">
+        <div className="timer__digit">{days+" J"} </div>
+      </div>
+      <div className="timer__separator">:</div>
+      <div className="timer__item active">
+        <div className="timer__digit">{hours + " h"}</div>
+      </div>
+      <div className="timer__separator">:</div>
+      <div className="timer__item active">
+        <div className="timer__digit">{minutes + " min"}</div>
       </div>
     </div>
+  </div>
+    //       <div>{days}</div>
+    //       
+    //     </div>
+    //     <div className="timer__item">
+    //       <div>{hours}</div>
+    //       <span>Heures</span>
+    //     </div>
+    //     <div className="timer__item">
+    //       <div>{minutes}</div>
+    //       <span>Minutes</span>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
 
