@@ -1,8 +1,9 @@
 # main.py
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pymongo import MongoClient
+from typing import List
 import base64
 import datetime
 import os
@@ -41,6 +42,17 @@ class RegistrationForm(BaseModel):
     eveningParty : bool
     message : str
 
+class userbase(BaseModel):
+    nom: str
+    prenom : str
+    adultes_soiré: int
+    enfants_soiré : int
+    mairie : bool
+    personnes_mairie : str
+    synagogue: bool
+    reception : bool
+    message : str
+
 
 # Route to handle registration form submission
 @app.post("/register")
@@ -49,8 +61,8 @@ def register_attendance(form: RegistrationForm):
     attendee_data = {
         "nom": form.name,
         "prenom" : form.prenom, 
-        "adultes_soiré": form.adultsEvening,
-        "enfants_soiré": form.childrenEvening,
+        "adultes_soiree": form.adultsEvening,
+        "enfants_soiree": form.childrenEvening,
         "mairie": form.civilService,
         "personnes_mairie" : form.adultsCivil,
         "synagogue": form.religiousService,
@@ -61,12 +73,16 @@ def register_attendance(form: RegistrationForm):
     
     return {"message": "Votre réponse a été enregistrée"}
 
+@app.get("/bdd", response_description="Recupere BDD", response_model=List[userbase])
+def list_users(request: Request):
+    users = list(request.app.database[collection].find(limit=100))
+    return users
 
 # Run the FastAPI server
 if __name__ == "__main__":
     import uvicorn
     
-    uvicorn.run("main:app", host="0.0.0.0", port=3000)
+    uvicorn.run("main:app", host="0.0.0.0", port=3000, reload=True)
 
 
 
