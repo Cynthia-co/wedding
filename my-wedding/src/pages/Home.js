@@ -5,7 +5,7 @@ import History from "./History";
 
 const Home = () => {
   return (
-    <div>
+    <div >
        <Timer />
        <p>
         Bienvenue sur le site de notre mariage, vous pourrez y voir toutes les
@@ -16,7 +16,7 @@ const Home = () => {
       <h1>Deux oui pour un nom !</h1>
      
       
-      <div className="all_ceremonies">
+      <div className="all_ceremonies" id="invitation">
         <div className="ceremonie">
           <svg
             xmlns="http://www.w3.org/2000/svg"

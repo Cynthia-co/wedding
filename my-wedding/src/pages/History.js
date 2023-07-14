@@ -5,7 +5,7 @@ import chateau from "../chateau.jpg";
 
 const History = () => {
   return (
-    <div className="history">
+    <div className="history" id="history">
       <div className="history__item">
         <img src={croatie} alt="fassi" style={{ width: 300, height: 300 }} />
         <p>Le 6 octobre 2021, après 3 ans d'amitié, début de la relation</p>

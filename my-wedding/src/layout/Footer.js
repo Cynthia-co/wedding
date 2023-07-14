@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="contact">
+    <div className="contact" id="contact">
       <h1>
         Vous pouvez également nous répondre ou nous contacter par mail ou
         téléphone :

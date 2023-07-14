@@ -13,8 +13,30 @@ function Attending() {
   const [eveningParty, setEveningParty] = useState(null);
   const [message, setMessage] = useState("");
 
+
+  const handleInvitCivil = (value) => {
+    if (value >= 0) {
+      setAdultsCivil(value);
+    }
+  };
+  const handleAdultsChange = (value) => {
+    if (value >= 0) {
+      setAdultsEvening(value);
+    }
+  };
+
+  const handleChildrenChange = (value) => {
+    if (value >= 0) {
+      setChildrenEvening(value);
+    }
+  };
+
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
+  
+    
+
 
     try {
       const response = await axios.post("http://localhost:3000/register", {
@@ -49,7 +71,7 @@ function Attending() {
   };
 
   return (
-    <div className="form">
+    <div className="form" id="form">
       <h1>Votre réponse : </h1>
       <form onSubmit={handleSubmit}>
         <div className="form__item">
@@ -95,8 +117,9 @@ function Attending() {
             type="number"
             id="adults"
             value={adultsCivil}
-            onChange={(e) => setAdultsCivil(Number(e.target.value))}
-            required
+            // onChange={(e) => setAdultsCivil(Number(e.target.value))}
+            onChange={(e) => handleInvitCivil(Number(e.target.value))}
+            required={civilService === 'Yes' }
           />
         </div>
         {/* <div className="form__item">
@@ -150,17 +173,19 @@ function Attending() {
             type="number"
             id="adults_evening"
             value={adultsEvening}
-            onChange={(e) => setAdultsEvening(Number(e.target.value))}
-            required
+            // onChange={(e) => setAdultsEvening(Number(e.target.value))}
+            onChange={(e) => handleAdultsChange(Number(e.target.value))}
+            required={ eveningParty === 'Yes'}
           />
         </div>
         <div className="form__item">
-          <label htmlFor="children">Nombre d'enfants:</label>
+          <label htmlFor="children">Nombre d'enfants (-13 ans):</label>
           <input
             type="number"
             id="childrenEvening"
             value={childrenEvening}
-            onChange={(e) => setChildrenEvening(Number(e.target.value))}
+            // onChange={(e) => setChildrenEvening(Number(e.target.value))}
+            onChange={(e) => handleChildrenChange(Number(e.target.value))}
           />
         </div>
         <div className="form__item">
