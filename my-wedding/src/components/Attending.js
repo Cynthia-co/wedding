@@ -23,9 +23,12 @@ function Attending() {
         adultsCivil,
         adultsEvening,
         childrenEvening,
-        civil_service: civilService === "Yes",
-        religious_service: religiousService === "Yes",
-        evening_party: eveningParty === "Yes",
+        civilService,
+        religiousService,
+        eveningParty,
+        // civil_service: civilService === "Yes",
+        // religious_service: religiousService === "Yes",
+        // evening_party: eveningParty === "Yes",
         message,
       });
 

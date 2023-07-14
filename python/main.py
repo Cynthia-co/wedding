@@ -35,6 +35,7 @@ class RegistrationForm(BaseModel):
     prenom : str
     adultsEvening: int
     childrenEvening : int
+    adultsCivil : int
     civilService : bool
     religiousService : bool
     eveningParty : bool
@@ -51,6 +52,7 @@ def register_attendance(form: RegistrationForm):
         "adultes_soiré": form.adultsEvening,
         "enfants_soiré": form.childrenEvening,
         "mairie": form.civilService,
+        "personnes_mairie" : form.adultsCivil,
         "synagogue": form.religiousService,
         "reception": form.eveningParty,
         "message": form.message

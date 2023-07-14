@@ -28,7 +28,7 @@ const Home = () => {
           <Ceremonie
             type={"Mairie"}
             lieu={"Mairie de Levallois"}
-            date={"13 décembre 2023 à 15h00"}
+            date={"13 décembre 2023 à 14h00"}
             adresse={"1 place de la République 92300 Levallois-Perret"}
           />
         </div>
