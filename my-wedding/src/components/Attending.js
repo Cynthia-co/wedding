@@ -35,7 +35,7 @@ function Attending() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if ((civilService === 'Yes' && adultsCivil === 0 ) || (eveningParty === 'Yes'  && adultsEvening === 0) ){
-      setErrorMessage('Please provide the number of adults.');
+      setErrorMessage(`Merci de remplir le nombre d'invités! `);
       return;
     }
 
@@ -66,10 +66,10 @@ function Attending() {
       setReligiousService(null);
       setEveningParty(null);
       setMessage("");
-      setErrorMessage('Registration successful!');
+      setErrorMessage('Inscription réussie!');
       setSubmitted(true); 
     } catch (error) {
-      setErrorMessage("An error occurred. Please try again.");
+      setErrorMessage("Une erreur a eu lieu, veuillez réessayer!");
     }
   };
 
@@ -130,16 +130,7 @@ function Attending() {
             required={civilService === "Yes"}
           />
         </div>
-        {/* <div className="form__item">
-          <label htmlFor="children">Nombre d'enfants:</label>
-          <input
-            type="number"
-            id="children"
-            value={childrenCivil}
-            onChange={(e) => setChildrenCivil(Number(e.target.value))}
-            required
-          />
-        </div> */}
+       
         <div>
           <label htmlFor="religiousService">Synagogue :</label>
           <label className="checkbox" htmlFor="religiousServiceYes">
@@ -218,7 +209,7 @@ function Attending() {
         </button>
       </form>
       ) : ( 
-        <p>Thank you for your registration!</p>
+        <p>Merci pour votre réponse!</p>
         )}
       {errorMessage && <p>{errorMessage}</p>}
     </div>

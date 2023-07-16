@@ -1,17 +1,16 @@
 @import "../utils/variables";
 
-.history{
+.history {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: $color-background1;
+  &__item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    &__item{
-        display: flex;
-        flex-direction: column;
-        }
-    }
-
-
-.history__item img{
-    border-radius: 50% ;
-    
+    flex-direction: column;
+    align-items: center;
+  }
+  &__legend{
+    Width: 60%;
+  }
 }

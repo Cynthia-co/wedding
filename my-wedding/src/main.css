@@ -119,7 +119,7 @@ label {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  background-image: url("https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg");
   background-size: cover;
 }
 
@@ -154,7 +154,7 @@ a {
   align-items: center;
   flex-direction: column;
   margin: 2%;
-  background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  background-image: url("https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg");
   background-size: cover;
 }
 .contact__detail {
@@ -165,7 +165,7 @@ a {
 }
 
 .all_ceremonies {
-  background-image: url("https://media.istockphoto.com/id/1136461807/photo/stylized-delicate-background-with-small-flowers.webp?b=1&s=170667a&w=0&k=20&c=P4pD_hEWvl-IkJzuIFIWB2Bx0H69HkKoeZiF9N93lEQ=");
+  background-image: url("https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg");
   display: flex;
   justify-content: space-around;
   background-size: cover;
@@ -175,14 +175,15 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  background-color: rgb(252, 247, 235);
 }
 .history__item {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
-
-.history__item img {
-  border-radius: 50%;
+.history__legend {
+  Width: 60%;
 }
 
 /*# sourceMappingURL=main.css.map */
