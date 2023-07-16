@@ -8,6 +8,7 @@
 .timer__entier{
     display: flex;
     flex-direction: row;
+    background-color: $color-background2;
 }
   .timer__item {
     position: relative;
@@ -15,7 +16,6 @@
   }
   
   .timer__item:before {
-    content: "";
     position: absolute;
     top: 0;
     left: 0;

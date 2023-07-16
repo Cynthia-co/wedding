@@ -5,6 +5,8 @@
     flex-direction: column;
     margin-left: 2%;
     align-items: center;
+    font-family: $font-secondary;
+    font-weight: bolder;
     // background: linear-gradient(217deg $color-background1 30%, 170deg $color-background2 75%);
 }
 .form__item, input{
@@ -23,4 +25,12 @@ label{
 .checkbox{
     display: inline;
     float: none;
+}
+
+input{
+    border-radius: 50px;
+}
+
+textarea{
+    border-radius: 28px;
 }

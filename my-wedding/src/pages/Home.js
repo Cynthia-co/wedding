@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <div >
        <Timer />
-       <p>
+       <p className="intro">
         Bienvenue sur le site de notre mariage, vous pourrez y voir toutes les
-        informations relatives au Jour J, confirmez votre présence, nous laisser
+        informations relatives au Jour J, <br/>confirmez votre présence, nous laisser
         un petit mot et simplement nous contacter!
       </p>
       <History/>
