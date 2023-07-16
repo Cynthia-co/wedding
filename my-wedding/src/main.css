@@ -193,6 +193,13 @@ p {
   font-weight: bolder;
 }
 
+.intro {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+
 .history {
   display: flex;
   flex-direction: row;

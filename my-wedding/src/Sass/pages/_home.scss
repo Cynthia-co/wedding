@@ -11,3 +11,10 @@ p {
   font-family: $font-secondary;
   font-weight: bolder;
 }
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
