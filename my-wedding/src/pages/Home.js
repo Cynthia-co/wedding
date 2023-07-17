@@ -6,9 +6,10 @@ import History from "./History";
 const Home = () => {
   return (
     <div>
-      <Timer />
+     
       <div className="intro">
-        <h2>Bienvenue sur le site de notre mariage!</h2>
+        <h2>Bienvenue sur le site de notre mariage!</h2> 
+        <Timer />
         <p>
           Vous pourrez y voir toutes les informations relatives au Jour J,
           confirmez votre présence, nous laisser un petit mot et simplement nous
@@ -81,7 +82,7 @@ const Home = () => {
             <Ceremonie
               type={"Soirée"}
               lieu={"Salon Berlioz du Grand Hotel Opéra"}
-              date={"17 décembre 2023 à 19h"}
+              date={"17 décembre 2023 à 19h00"}
               adresse={"2 rue Scribe, 75009 Paris"}
             />
             <iframe

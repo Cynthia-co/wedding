@@ -22,7 +22,7 @@
 .timer__entier {
   display: flex;
   flex-direction: row;
-  background-color: rgb(248, 247, 241);
+  background-color: rgb(252, 247, 235);
 }
 
 .timer__item {
@@ -142,6 +142,8 @@ textarea {
 h1 {
   font-family: "Great Vibes";
   color: rgb(139, 117, 106);
+  text-align: center;
+  font-size: 50px;
 }
 
 .nav {
@@ -181,11 +183,19 @@ a {
   width: 90%;
 }
 
-.all_ceremonies {
+body {
+  background-color: rgb(252, 247, 235);
+}
+
+#invitation {
   background-image: url("fond.png");
+  background-size: cover;
+  padding: 2%;
+}
+
+.all_ceremonies {
   display: flex;
   justify-content: space-around;
-  background-size: cover;
 }
 
 p {
@@ -198,13 +208,13 @@ p {
   flex-direction: column;
   align-content: center;
   justify-content: center;
+  text-align: center;
 }
 
 .history {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(252, 247, 235);
 }
 .history__item {
   display: flex;

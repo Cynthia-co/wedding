@@ -1,10 +1,17 @@
 @import "../utils/variables";
-
-.all_ceremonies {
+body{
+  background-color: $color-background1;
+}
+#invitation{
   background-image:url("fond.png");
+  background-size: cover;
+  padding: 2%;
+}
+.all_ceremonies {
+  
   display: flex;
   justify-content: space-around;
-  background-size: cover;
+ 
 }
 
 p {
@@ -17,4 +24,5 @@ p {
     flex-direction: column;
     align-content: center;
     justify-content: center;
+    text-align: center;
 }
