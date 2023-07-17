@@ -27,10 +27,17 @@ label{
     float: none;
 }
 
-input{
+input, select{
     border-radius: 50px;
+    padding: 10px;
 }
 
 textarea{
-    border-radius: 28px;
+    border-radius: 50px;
 }
+
+.number{
+    padding-left: 4%;
+    width: 280px;
+}
+

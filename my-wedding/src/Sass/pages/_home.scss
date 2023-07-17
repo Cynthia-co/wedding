@@ -1,6 +1,7 @@
 @import "../utils/variables";
 body{
   background-color: $color-background1;
+  overflow-x: hidden;
 }
 #invitation{
   background-image:url("fond.png");

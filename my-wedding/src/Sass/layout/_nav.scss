@@ -3,6 +3,9 @@
     flex-direction: row;
     justify-content: flex-end;
     font-family: $font-secondary;
+    position: absolute;
+    top: 0;
+    margin-left: 70%;
   
 &__global{
     list-style-type: none;

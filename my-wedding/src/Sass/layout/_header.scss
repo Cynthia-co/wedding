@@ -1,13 +1,18 @@
 @import '../utils/variables';
 
 .header{
-    display: flex;
+   
     flex-direction: row;
-    justify-content: space-around;
+   
     background-image: url('https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg');
     background-size:cover;
+&__logo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
 
-// background-repeat: no-repeat;
  }    
 
 .logo{
