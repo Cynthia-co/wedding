@@ -22,7 +22,7 @@
 .timer__entier {
   display: flex;
   flex-direction: row;
-  background-color: rgb(252, 247, 235);
+  background-color: rgb(255, 243, 226);
 }
 
 .timer__item {
@@ -36,7 +36,7 @@
   left: 0;
   width: 100%;
   height: 50%;
-  background-color: rgb(252, 247, 235);
+  background-color: rgb(255, 243, 226);
   transform-origin: top;
   transform: perspective(800px) rotateX(0deg);
   transition: transform 0.5s ease;
@@ -49,7 +49,7 @@
   left: 0;
   width: 100%;
   height: 50%;
-  background-color: rgb(252, 247, 235);
+  background-color: rgb(255, 243, 226);
   transform-origin: bottom;
   transform: perspective(800px) rotateX(0deg);
   transition: transform 0.5s ease;
@@ -66,16 +66,16 @@
 .timer__digit {
   font-size: 48px;
   font-weight: bold;
-  color: rgb(156, 138, 33);
+  color: rgb(210, 149, 0);
   text-align: center;
   padding: 10px;
-  background-color: rgb(252, 247, 235);
+  background-color: rgb(255, 243, 226);
 }
 
 .timer__separator {
   font-size: 48px;
   font-weight: bold;
-  color: rgb(156, 138, 33);
+  color: rgb(210, 149, 0);
 }
 
 .form {
@@ -114,7 +114,9 @@ input, select {
 }
 
 textarea {
-  border-radius: 50px;
+  border-radius: 28px;
+  padding: 3%;
+  padding: 2%;
 }
 
 .number {
@@ -126,7 +128,7 @@ textarea {
   margin: 4%;
   margin-left: 19%;
   padding: 3%;
-  background: rgb(252, 247, 235);
+  background: rgb(255, 243, 226);
   border-radius: 15px;
   font-family: "Great Vibes";
   font-weight: bold;
@@ -147,14 +149,16 @@ textarea {
 }
 
 .logo {
+  margin-top: 2%;
   width: 11%;
 }
 
 h1 {
   font-family: "Great Vibes";
-  color: rgb(139, 117, 106);
+  color: rgb(210, 149, 0);
   text-align: center;
   font-size: 50px;
+  margin-top: 10px;
 }
 
 .nav {
@@ -179,7 +183,8 @@ h1 {
 a {
   text-decoration: none;
   padding-right: 3%;
-  color: rgb(139, 117, 106);
+  color: rgb(187, 131, 0);
+  font-weight: bolder;
 }
 
 .contact {
@@ -199,7 +204,7 @@ a {
 }
 
 body {
-  background-color: rgb(252, 247, 235);
+  background-color: rgb(255, 243, 226);
   overflow-x: hidden;
 }
 
@@ -225,6 +230,12 @@ p {
   align-content: center;
   justify-content: center;
   text-align: center;
+}
+
+h2, p {
+  font-family: "Raleway";
+  font-weight: bolder;
+  color: rgb(170, 119, 0);
 }
 
 .history {

@@ -27,3 +27,10 @@ p {
     justify-content: center;
     text-align: center;
 }
+
+h2, p{
+  font-family: $font-secondary;
+  font-weight: bolder;
+  color: $color-font2;
+}
+
