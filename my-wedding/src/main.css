@@ -242,6 +242,9 @@ h2, p {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  border: solid 1px rgb(210, 149, 0);
+  box-shadow: 8px 3px 3px rgb(170, 119, 0);
+  margin-bottom: 3%;
 }
 .history__item {
   display: flex;

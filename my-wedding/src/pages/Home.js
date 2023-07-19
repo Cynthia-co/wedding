@@ -17,9 +17,9 @@ const Home = () => {
         </p>
       </div>
       <History />
-
+      <h1>Deux oui pour un nom !</h1>
       <div id="invitation">
-        <h1>Deux oui pour un nom !</h1>
+        
         <div className="all_ceremonies">
           <div className="ceremonie">
             <svg

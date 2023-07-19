@@ -10,3 +10,11 @@
   $color-background2: rgb(248,247,241);
   $color-font: rgb(187,131,0);
   $color-font2: rgb(170,119,0);
+
+  $breakpoints: (
+    "mobile" : 850px,
+    "tablet": 1023px,
+    "medium-screen": 1368px,
+    "large": 1440px,
+    "x-large":2200px
+    );
