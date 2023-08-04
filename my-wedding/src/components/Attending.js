@@ -214,7 +214,7 @@ function Attending() {
             </select>
           </div>
           <div className="form__item">
-            <label htmlFor="children" className="number">Nombre d'enfants (-13 ans):</label>
+            <label htmlFor="children" className="number">Nombre d'enfants (-10 ans):</label>
             {/* <input
               type="number"
               id="childrenEvening"

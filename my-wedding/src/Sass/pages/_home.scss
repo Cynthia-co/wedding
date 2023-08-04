@@ -1,10 +1,11 @@
 @import "../utils/variables";
+@import "../utils/mixins";
 body{
   background-color: $color-background1;
   overflow-x: hidden;
 }
 #invitation{
-  background-image:url("fond.png");
+  background-image:url("fond.webp");
   background-size: cover;
   padding: 2%;
 }
@@ -12,8 +13,13 @@ body{
   
   display: flex;
   justify-content: space-around;
+ @include tablet{
+  flex-direction: column;
+  
+ }};
+  
  
-}
+
 
 p {
   font-family: $font-secondary;

@@ -1,46 +1,87 @@
 @import "../utils/variables";
 
-.form{
+$form-max-width: map-get($breakpoints, "medium-screen");
+$form-mobile-width: map-get($breakpoints, "mobile");
+
+.form {
     display: flex;
     flex-direction: column;
     margin-left: 2%;
     align-items: center;
     font-family: $font-secondary;
     font-weight: bolder;
-    // background: linear-gradient(217deg $color-background1 30%, 170deg $color-background2 75%);
+
+    @media screen and (max-width: #{$form-max-width}) {
+        margin-left: 0; // Supprimer la marge pour les écrans medium-screen et inférieurs
+    }
+
+    @media screen and (max-width: #{$form-mobile-width}) {
+        margin-left: 0; // Supprimer la marge pour les écrans mobile et inférieurs
+    }
 }
-.form__item, input{
+
+.form__item,
+input,
+select,
+textarea {
     padding-bottom: 2%;
+
+    @media screen and (max-width: #{$form-mobile-width}) {
+        padding-bottom: 1%; // Réduire l'espacement pour les écrans mobile et inférieurs
+    }
 }
-.form_evening{
+
+.form_evening {
     margin-top: 2%;
     margin-bottom: 2%;
+
+    @media screen and (max-width: #{$form-mobile-width}) {
+        margin-top: 1%; // Réduire la marge pour les écrans mobile et inférieurs
+        margin-bottom: 1%; // Réduire la marge pour les écrans mobile et inférieurs
+    }
 }
-label{
+
+label {
     display: block;
     float: left;
     width: 300px;
     margin-top: 2%;
+
+    // @media screen and (max-width: #{$form-max-width}) {
+    //     width: 100%; // Utiliser toute la largeur disponible pour les écrans medium-screen et inférieurs
+    // }
 }
-.checkbox{
+
+.checkbox {
     display: inline;
     float: none;
 }
 
-input, select{
+input,
+select {
     border-radius: 50px;
     padding: 10px;
+
+    // @media screen and (max-width: #{$form-mobile-width}) {
+    //     padding: 5px; // Réduire le rembourrage pour les écrans mobile et inférieurs
+    // }
 }
 
-textarea{
+textarea {
     border-radius: 28px;
     padding: 3%;
-   padding: 2%;
+    padding: 2%;
+
+    @media screen and (max-width: #{$form-mobile-width}) {
+        padding: 1.5%; // Réduire le rembourrage pour les écrans mobile et inférieurs
+    }
 }
 
-.number{
+.number {
     padding-left: 4%;
     width: 280px;
-   
-}
 
+    @media screen and (max-width: #{$form-mobile-width}) {
+        width: 100%; // Utiliser toute la largeur disponible pour les écrans mobile et inférieurs
+    }
+}

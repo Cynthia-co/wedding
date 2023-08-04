@@ -1,0 +1,50 @@
+@import '../utils/variables';
+
+/* Styles pour le bouton burger */
+/* Styles pour le bouton burger */
+.burger-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none; /* Masquez le bouton par défaut sur les écrans plus grands */
+    cursor: pointer;
+  }
+  
+  .bar {
+    width: 25px;
+    height: 3px;
+    background-color: $color-font-title;
+    margin: 6px 0;
+  }
+  
+  /* Styles pour le menu déroulant */
+  .nav__global {
+    position: relative; /* Assurez-vous que le conteneur parent a une position relative */
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav__item {
+    margin-right: 20px;
+  }
+  
+  /* Media query pour les écrans plus petits (mobiles) */
+  @media screen and (max-width: 768px) {
+    .nav__global {
+      display: none; /* Masquez le menu de navigation par défaut sur les petits écrans */
+      flex-direction: column;
+      transform: translateX(-100%); /* Masquez le menu en le déplaçant vers la gauche */
+      transition: transform 0.3s ease; /* Ajoutez une transition pour une animation fluide */
+    }
+  
+    .nav__global.active {
+      display: flex; /* Affichez le menu lorsque la classe active est appliquée */
+      transform: translateX(0); /* Affichez le menu en le déplaçant vers la droite */
+    }
+  
+    .burger-menu {
+      display: block; /* Affichez le bouton burger sur les petits écrans */
+    }
+  }
+  

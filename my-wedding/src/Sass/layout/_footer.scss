@@ -1,15 +1,28 @@
-.contact{
+@import '../utils/variables';
+
+.contact {
     display: flex;
     align-items: center;
     flex-direction: column;
     margin: 2%;
     background-image: url('https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg');
     background-size: cover;
-    &__detail{
+
+    &__detail {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
         width: 90%;
         text-align: center;
+
+        // Règles pour les écrans tablet et plus petits
+        @media screen and (max-width: map-get($breakpoints, "tablet")) {
+            width: 95%; // Ajuster la largeur pour les écrans tablet et plus petits
+        }
+
+        // Règles pour les écrans mobile et plus petits
+        @media screen and (max-width: map-get($breakpoints, "mobile")) {
+            width: 100%; // Ajuster la largeur pour les écrans mobile et plus petits
+        }
     }
 }

@@ -1,5 +1,7 @@
-@import "../utils/variables";
+@import '../utils/mixins';
+@import '../utils/variables';
 
+/* Styles communs pour la classe .history (pour tous les écrans) */
 .history {
   display: flex;
   flex-direction: row;
@@ -7,12 +9,98 @@
   border: solid 1px $color-font-title;
   box-shadow: 5px 3px 3px $color-shadow;
   margin-bottom: 3%;
-  &__item {
+}
+
+.history__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.history__legend {
+  width: 60%;
+  margin-left: 25%;
+}
+
+/* Styles pour les formats mobiles (jusqu'à 768px) */
+@include mobile {
+  .history {
+    flex-wrap: wrap; /* Pour que les éléments passent à la ligne si la tablette est petite */
+    border: none; /* Supprimer la bordure */
+    box-shadow: none; /* Supprimer l'ombre */
+  }
+
+  .history__item {
+    flex-basis: 50%; /* Pour occuper 50% de l'espace sur la ligne s'il y a 2 éléments par ligne (pour les tablettes petites) */
+    padding: 0; /* Supprimer le padding pour aligner les images et légendes à gauche */
+  }
+
+  .history__legend {
+    width: 100%; /* Ajuster la largeur à 100% pour s'adapter à la disposition en colonne sur les tablettes petites et les mobiles */
+    margin-left: 0; /* Supprimer la marge pour aligner le texte à gauche */
+  }
+
+  /* Styles pour le carrousel */
+  .carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .carousel .slide {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
   }
-  &__legend{
-    width: 60%;
+
+  .carousel .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carousel .slide p {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+
+/* Styles pour les formats tablette et écran large (769px à 1024px) */
+@include tablet{
+  // .history {
+  //   display: none; /* Masquer la version en colonne pour les formats tablette et écran large */
+  // }
+
+  /* Styles pour le carrousel */
+  .carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .carousel .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .carousel .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .carousel .slide p {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
   }
 }

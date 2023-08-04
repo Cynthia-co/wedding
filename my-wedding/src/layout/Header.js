@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../logoor.png";
+import logo from "../logoor.webp";
 import Nav from "./Nav";
 
 const Header = () => {

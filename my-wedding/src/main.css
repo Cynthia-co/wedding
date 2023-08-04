@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .all_ceremonies {
   display: flex;
   flex-direction: row;
@@ -11,6 +12,16 @@
   flex-direction: column;
   align-items: center;
   font-family: "Raleway";
+}
+@media screen and (max-width: 850px) {
+  .ceremonie, .ceremonie_box {
+    margin-top: 2%;
+  }
+}
+@media screen and (max-width: 1023px) {
+  .ceremonie, .ceremonie_box {
+    margin-top: 2%;
+  }
 }
 
 .timer {
@@ -86,14 +97,41 @@
   font-family: "Raleway";
   font-weight: bolder;
 }
+@media screen and (max-width: 1368px) {
+  .form {
+    margin-left: 0;
+  }
+}
+@media screen and (max-width: 850px) {
+  .form {
+    margin-left: 0;
+  }
+}
 
-.form__item, input {
+.form__item,
+input,
+select,
+textarea {
   padding-bottom: 2%;
+}
+@media screen and (max-width: 850px) {
+  .form__item,
+  input,
+  select,
+  textarea {
+    padding-bottom: 1%;
+  }
 }
 
 .form_evening {
   margin-top: 2%;
   margin-bottom: 2%;
+}
+@media screen and (max-width: 850px) {
+  .form_evening {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
 }
 
 label {
@@ -108,7 +146,8 @@ label {
   float: none;
 }
 
-input, select {
+input,
+select {
   border-radius: 50px;
   padding: 10px;
 }
@@ -118,10 +157,20 @@ textarea {
   padding: 3%;
   padding: 2%;
 }
+@media screen and (max-width: 850px) {
+  textarea {
+    padding: 1.5%;
+  }
+}
 
 .number {
   padding-left: 4%;
   width: 280px;
+}
+@media screen and (max-width: 850px) {
+  .number {
+    width: 100%;
+  }
 }
 
 .button-submit {
@@ -147,10 +196,26 @@ textarea {
   align-items: center;
   justify-self: center;
 }
+@media screen and (max-width: 1023px) {
+  .header__logo {
+    align-items: center;
+  }
+}
 
 .logo {
   margin-top: 2%;
   width: 11%;
+  filter: drop-shadow(10px 6px 4px rgb(255, 206, 91));
+}
+@media screen and (max-width: 1023px) {
+  .logo {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .logo {
+    width: 20%;
+  }
 }
 
 h1 {
@@ -159,6 +224,13 @@ h1 {
   text-align: center;
   font-size: 50px;
   margin-top: 10px;
+  text-shadow: 2px 2px 2px rgb(255, 206, 91);
+}
+@media screen and (max-width: 850px) {
+  h1 {
+    font-size: 36px;
+    margin-top: 5px;
+  }
 }
 
 .nav {
@@ -187,6 +259,25 @@ a {
   font-weight: bolder;
 }
 
+.nav__global {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav__item {
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .nav__global {
+    display: none;
+    flex-direction: column;
+  }
+  .nav__global.active {
+    display: flex;
+  }
+}
 .contact {
   display: flex;
   align-items: center;
@@ -202,14 +293,69 @@ a {
   width: 90%;
   text-align: center;
 }
+@media screen and (max-width: 1023px) {
+  .contact__detail {
+    width: 95%;
+  }
+}
+@media screen and (max-width: 850px) {
+  .contact__detail {
+    width: 100%;
+  }
+}
 
+/* Styles pour le bouton burger */
+/* Styles pour le bouton burger */
+.burger-menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: none; /* Masquez le bouton par défaut sur les écrans plus grands */
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(210, 149, 0);
+  margin: 6px 0;
+}
+
+/* Styles pour le menu déroulant */
+.nav__global {
+  position: relative; /* Assurez-vous que le conteneur parent a une position relative */
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.nav__item {
+  margin-right: 20px;
+}
+
+/* Media query pour les écrans plus petits (mobiles) */
+@media screen and (max-width: 768px) {
+  .nav__global {
+    display: none; /* Masquez le menu de navigation par défaut sur les petits écrans */
+    flex-direction: column;
+    transform: translateX(-100%); /* Masquez le menu en le déplaçant vers la gauche */
+    transition: transform 0.3s ease; /* Ajoutez une transition pour une animation fluide */
+  }
+  .nav__global.active {
+    display: flex; /* Affichez le menu lorsque la classe active est appliquée */
+    transform: translateX(0); /* Affichez le menu en le déplaçant vers la droite */
+  }
+  .burger-menu {
+    display: block; /* Affichez le bouton burger sur les petits écrans */
+  }
+}
 body {
   background-color: rgb(255, 243, 226);
   overflow-x: hidden;
 }
 
 #invitation {
-  background-image: url("fond.png");
+  background-image: url("fond.webp");
   background-size: cover;
   padding: 2%;
 }
@@ -217,6 +363,11 @@ body {
 .all_ceremonies {
   display: flex;
   justify-content: space-around;
+}
+@media screen and (max-width: 1023px) {
+  .all_ceremonies {
+    flex-direction: column;
+  }
 }
 
 p {
@@ -238,6 +389,7 @@ h2, p {
   color: rgb(170, 119, 0);
 }
 
+/* Styles communs pour la classe .history (pour tous les écrans) */
 .history {
   display: flex;
   flex-direction: row;
@@ -246,13 +398,85 @@ h2, p {
   box-shadow: 5px 3px 3px rgb(255, 206, 91);
   margin-bottom: 3%;
 }
+
 .history__item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
 }
+
 .history__legend {
   width: 60%;
+  margin-left: 25%;
+}
+
+/* Styles pour les formats mobiles (jusqu'à 768px) */
+@media screen and (max-width: 850px) {
+  .history {
+    flex-wrap: wrap; /* Pour que les éléments passent à la ligne si la tablette est petite */
+    border: none; /* Supprimer la bordure */
+    box-shadow: none; /* Supprimer l'ombre */
+  }
+  .history__item {
+    flex-basis: 50%; /* Pour occuper 50% de l'espace sur la ligne s'il y a 2 éléments par ligne (pour les tablettes petites) */
+    padding: 0; /* Supprimer le padding pour aligner les images et légendes à gauche */
+  }
+  .history__legend {
+    width: 100%; /* Ajuster la largeur à 100% pour s'adapter à la disposition en colonne sur les tablettes petites et les mobiles */
+    margin-left: 0; /* Supprimer la marge pour aligner le texte à gauche */
+  }
+  /* Styles pour le carrousel */
+  .carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .carousel .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .carousel .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+  .carousel .slide p {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
+}
+/* Styles pour les formats tablette et écran large (769px à 1024px) */
+@media screen and (max-width: 1023px) {
+  /* Styles pour le carrousel */
+  .carousel {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  .carousel .slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .carousel .slide img {
+    max-width: 100%;
+    height: auto;
+  }
+  .carousel .slide p {
+    width: 100%;
+    margin-top: 10px;
+    text-align: center;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

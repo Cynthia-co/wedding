@@ -1,29 +1,50 @@
 @import '../utils/variables';
 
-.header{
-   
+.header {
     flex-direction: row;
-   
     background-image: url('https://img.freepik.com/vecteurs-premium/fond-peinture-aquarelle-papillon-floral_108834-801.jpg');
-    background-size:cover;
-&__logo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
+    background-size: cover;
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-self: center;
+
+        // Règles pour les écrans tablet et plus petits
+        @media screen and (max-width: map-get($breakpoints, "tablet")) {
+            align-items: center; // Aligner le logo à gauche pour les écrans tablet et plus petits
+        }
+    }
 }
 
- }    
-
-.logo{
+.logo {
     margin-top: 2%;
     width: 11%;
+    filter: drop-shadow(10px 6px 4px $color-shadow);
+
+    // Règles pour les écrans tablet et plus petits
+    @media screen and (max-width: map-get($breakpoints, "tablet")) {
+        width: 20%; // Ajuster la largeur du logo pour les écrans tablet et plus petits
+    }
+
+    // Règles pour les écrans mobile et plus petits
+    @media screen and (max-width: map-get($breakpoints, "mobile")) {
+        width: 20%; // Ajuster la largeur du logo pour les écrans mobile et plus petits
+    }
 }
 
-h1{
+h1 {
     font-family: $font-primary;
     color: $color-font-title;
     text-align: center;
     font-size: 50px;
     margin-top: 10px;
+    text-shadow: 2px 2px 2px $color-shadow;
+
+    // Règles pour les écrans mobile et plus petits
+    @media screen and (max-width: map-get($breakpoints, "mobile")) {
+        font-size: 36px; // Ajuster la taille du titre pour les écrans mobile et plus petits
+        margin-top: 5px; // Ajuster la marge supérieure pour les écrans mobile et plus petits
+    }
 }

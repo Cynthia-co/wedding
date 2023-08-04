@@ -24,3 +24,25 @@ a{
     color: $color-font;
     font-weight: bolder;
 }
+
+.nav__global {
+    display: flex;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .nav__item {
+    margin-right: 20px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .nav__global {
+      display: none;
+      flex-direction: column;
+    }
+  
+    .nav__global.active {
+      display: flex;
+    }
+  }
+  
