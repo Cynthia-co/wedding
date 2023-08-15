@@ -1,9 +1,9 @@
 import React from "react";
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, DotGroup } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
-import croatie from "../split2.png";
-import oui from "../vienne.png";
-import chateau from "../schonbrun.png";
+import croatie from "../split2.webp";
+import oui from "../vienne.webp";
+import chateau from "../schonbrun.webp";
 
 
 const slides = [
@@ -19,7 +19,7 @@ const History = () => {
       <div className="carousel-container">
         <CarouselProvider
           naturalSlideWidth={800}
-          naturalSlideHeight={450}
+          naturalSlideHeight={350}
           totalSlides={slides.length}
         >
           <Slider>
