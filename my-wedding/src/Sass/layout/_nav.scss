@@ -1,48 +1,112 @@
-.nav{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    font-family: $font-secondary;
-    position: absolute;
-    top: 0;
-    margin-left: 70%;
-  
-&__global{
-    list-style-type: none;
-    display: flex;
-    flex-direction: row;
-}
-&__item{
-    margin:2%;
-    padding-right: 2%;
-}
+/* Styles pour le bouton burger */
+.burger-menu {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
 }
 
-a{
-    text-decoration: none;
-    padding-right: 3%;
-    color: $color-font;
-    font-weight: bolder;
+/* Animation pour l'icône burger lorsqu'elle est active */
+.burger-menu.active .burger-icon rect:first-child {
+  transform: translateY(12px) rotate(45deg);
 }
 
+.burger-menu.active .burger-icon rect:nth-child(2) {
+  opacity: 0;
+}
+
+.burger-menu.active .burger-icon rect:last-child {
+  transform: translateY(-12px) rotate(-45deg);
+}
+
+/* Styles pour l'icône burger */
+.burger-icon rect {
+  fill: #000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Styles pour le menu déroulant */
 .nav__global {
+  display: none;
+  list-style: none;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  transform: translateX(0);
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.nav__item {
+  margin: 0;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Media query pour les écrans plus petits (mobiles) */
+@media screen and (max-width: 768px) {
+  .nav__global.active {
     display: flex;
-    list-style: none;
-    padding: 0;
+    flex-direction: column;
   }
-  
-  .nav__item {
-    margin-right: 20px;
+
+  .burger-menu {
+    display: flex;
   }
+}
+
+
+.nav{
+     display: flex;
+     flex-direction: row;
+     justify-content: flex-end;
+     font-family: $font-secondary;
+     position: absolute;
+     top: 0;
+     margin-left: 70%;
+}
+// &__global{
+//     list-style-type: none;
+//     display: flex;
+//     flex-direction: row;
+// }
+// &__item{
+//     margin:2%;
+//     padding-right: 2%;
+// }
+// }
+
+// a{
+//     text-decoration: none;
+//     padding-right: 3%;
+//     color: $color-font;
+//     font-weight: bolder;
+// }
+
+// .nav__global {
+//     display: flex;
+//     list-style: none;
+//     padding: 0;
+//   }
   
-  @media screen and (max-width: 768px) {
-    .nav__global {
-      display: none;
-      flex-direction: column;
-    }
+//   .nav__item {
+//     margin-right: 20px;
+//   }
   
-    .nav__global.active {
-      display: flex;
-    }
-  }
+//   @media screen and (max-width: 768px) {
+//     .nav__global {
+//       display: none;
+//       flex-direction: column;
+//     }
+  
+//     .nav__global.active {
+//       display: flex;
+//     }
+//   }
   

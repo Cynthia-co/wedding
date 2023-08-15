@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Attending from './components/Attending';
+import History from './pages/History';
 // 
 
 
@@ -14,6 +15,7 @@ function App() {
       <Header/> 
        <Home/>
         <Attending/> 
+        <History/>
       <Footer/>
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Timer from "../components/Timer";
 import Ceremonie from "../components/Ceremonie";
-import History from "./History";
+
 
 const Home = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
@@ -30,7 +30,7 @@ const Home = () => {
           nous contacter!
         </p>
       </div>
-      <History />
+    
       <h1>Deux oui pour un nom !</h1>
       <div id="invitation">
         <div className="all_ceremonies">
