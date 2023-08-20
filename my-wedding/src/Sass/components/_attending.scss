@@ -2,86 +2,127 @@
 
 $form-max-width: map-get($breakpoints, "medium-screen");
 $form-mobile-width: map-get($breakpoints, "mobile");
+$form-desktop-width: map-get($breakpoints, "tablet");
 
 .form {
-    display: flex;
-    flex-direction: column;
-    margin-left: 2%;
-    align-items: center;
-    font-family: $font-secondary;
-    font-weight: bolder;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2%;
+  align-items: center;
+  font-family: $font-secondary;
+  font-weight: bolder;
 
+
+  @media screen and (max-width: #{$form-mobile-width}) {
+    margin-left: 30%; // Supprimer la marge pour les écrans mobile et inférieurs
+  }
     @media screen and (max-width: #{$form-max-width}) {
-        margin-left: 0; // Supprimer la marge pour les écrans medium-screen et inférieurs
-    }
-
-    @media screen and (max-width: #{$form-mobile-width}) {
-        margin-left: 0; // Supprimer la marge pour les écrans mobile et inférieurs
-    }
+    margin-left: 10%; // Supprimer la marge pour les écrans medium-screen et inférieurs
+  }
+  @media screen and (min-width: #{$form-desktop-width}) {
+    margin-left: 2%; // Supprimer la marge pour les écrans medium-screen et inférieurs
+  }
 }
 
 .form__item,
 input,
 select,
 textarea {
-    padding-bottom: 2%;
-
-    @media screen and (max-width: #{$form-mobile-width}) {
-        padding-bottom: 1%; // Réduire l'espacement pour les écrans mobile et inférieurs
-    }
+  padding-bottom: 2%;
+  @media screen and (max-width: #{$form-max-width}) {
+   
+   display: flex;
+   flex-direction: column;
+  }
+  @media screen and (max-width: #{$form-mobile-width}) {
+    padding-bottom: 1%; // Réduire l'espacement pour les écrans mobile et inférieurs
+  }
 }
 
 .form_evening {
-    margin-top: 2%;
-    margin-bottom: 2%;
+  margin-top: 2%;
+  margin-bottom: 2%;
 
-    @media screen and (max-width: #{$form-mobile-width}) {
-        margin-top: 1%; // Réduire la marge pour les écrans mobile et inférieurs
-        margin-bottom: 1%; // Réduire la marge pour les écrans mobile et inférieurs
-    }
+  @media screen and (max-width: #{$form-mobile-width}) {
+    margin-top: 1%; // Réduire la marge pour les écrans mobile et inférieurs
+    margin-bottom: 1%; // Réduire la marge pour les écrans mobile et inférieurs
+  }
 }
 
 label {
-    display: block;
-    float: left;
-    width: 300px;
-    margin-top: 2%;
-
-    // @media screen and (max-width: #{$form-max-width}) {
-    //     width: 100%; // Utiliser toute la largeur disponible pour les écrans medium-screen et inférieurs
-    // }
+  display: block;
+  float: left;
+  width: 300px;
+  margin-top: 2%;
 }
 
 .checkbox {
-    display: inline;
-    float: none;
+  display: inline;
+  float: none;
 }
 
 input,
 select {
-    border-radius: 50px;
-    padding: 10px;
-
-    // @media screen and (max-width: #{$form-mobile-width}) {
-    //     padding: 5px; // Réduire le rembourrage pour les écrans mobile et inférieurs
-    // }
+  border-radius: 50px;
+  padding: 10px;
 }
 
 textarea {
-    border-radius: 28px;
-    padding: 3%;
-    padding: 2%;
+  border-radius: 28px;
+  padding: 3%;
+  padding: 2%;
 
-    @media screen and (max-width: #{$form-mobile-width}) {
-        padding: 1.5%; // Réduire le rembourrage pour les écrans mobile et inférieurs
-    }
+  @media screen and (max-width: #{$form-mobile-width}) {
+    padding: 1.5%; // Réduire le rembourrage pour les écrans mobile et inférieurs
+  }
 }
 
 .number {
-    padding-left: 4%;
-    width: 280px;
+  padding-left: 4%;
+  width: 280px;
 
-    @media screen and (max-width: #{$form-mobile-width}) {
-        width: 100%; // Utiliser toute la largeur disponible pour les écrans mobile et inférieurs
-    }
+  @media screen and (max-width: #{$form-mobile-width}) {
+    width: 100%; // Utiliser toute la largeur disponible pour les écrans mobile et inférieurs
+  }
+}
+
+.form-mairie,
+.form-soir,
+.syna {
+  @media screen and (max-width: $form-mobile-width) {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.checkbox-group {
+  
+//   @media screen and (max-width: $form-desktop-width) {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+    width: 8%;
+  }
+
+
+.checkbox {
+  @media screen and (max-width: $form-mobile-width) {
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+}
+
+.checkbox-group .checkbox {
+  @media screen and (max-width: $form-mobile-width) {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px; /* Ajustez la marge inférieure selon vos besoins */
+  }
+}
+
+.checkbox-group input[type="checkbox"] {
+  @media screen and (max-width: $form-mobile-width) {
+    margin-right: -63%; /* Ajustez la marge droite selon vos besoins */
+  }
 }

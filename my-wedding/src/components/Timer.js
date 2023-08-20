@@ -35,9 +35,7 @@ const Timer = () => {
   }, []);
 
   return (
-    // <div className="timer">
-    //   <div className="timer__entier">
-    //     <div className="timer__item">
+    
     <div className="timer">
     <div className="timer__entier">
       <div className="timer__item active">

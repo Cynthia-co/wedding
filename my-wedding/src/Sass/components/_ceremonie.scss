@@ -22,4 +22,12 @@
         margin-top: 2%;
         
     }
+  
+}
+
+#invitation{
+    @include x-large{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 }

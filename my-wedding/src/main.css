@@ -26,6 +26,13 @@
   }
 }
 
+@media screen and (min-width: 2200px) {
+  #invitation {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+}
+
 .timer {
   display: flex;
   align-items: center;
@@ -91,6 +98,24 @@
   color: rgb(210, 149, 0);
 }
 
+.button-submit {
+  margin: 4%;
+  margin-left: 19%;
+  padding: 3%;
+  background: rgb(255, 206, 91);
+  border-radius: 15px;
+  font-family: "Great Vibes";
+  font-weight: bold;
+  font-size: 30px;
+  width: 300px;
+}
+@media screen and (max-width: 850px) {
+  .button-submit {
+    width: 210px;
+    margin-left: 2%;
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -99,14 +124,19 @@
   font-family: "Raleway";
   font-weight: bolder;
 }
-@media screen and (max-width: 1368px) {
-  .form {
-    margin-left: 0;
-  }
-}
 @media screen and (max-width: 850px) {
   .form {
-    margin-left: 0;
+    margin-left: 30%;
+  }
+}
+@media screen and (max-width: 1368px) {
+  .form {
+    margin-left: 10%;
+  }
+}
+@media screen and (min-width: 1023px) {
+  .form {
+    margin-left: 2%;
   }
 }
 
@@ -115,6 +145,15 @@ input,
 select,
 textarea {
   padding-bottom: 2%;
+}
+@media screen and (max-width: 1368px) {
+  .form__item,
+  input,
+  select,
+  textarea {
+    display: flex;
+    flex-direction: column;
+  }
 }
 @media screen and (max-width: 850px) {
   .form__item,
@@ -175,16 +214,42 @@ textarea {
   }
 }
 
-.button-submit {
-  margin: 4%;
-  margin-left: 19%;
-  padding: 3%;
-  background: rgb(255, 206, 91);
-  border-radius: 15px;
-  font-family: "Great Vibes";
-  font-weight: bold;
-  font-size: 30px;
-  width: 300px;
+@media screen and (max-width: 850px) {
+  .form-mairie,
+  .form-soir,
+  .syna {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5px;
+  width: 8%;
+}
+
+@media screen and (max-width: 850px) {
+  .checkbox {
+    margin-right: 5px;
+    margin-bottom: 3px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .checkbox-group .checkbox {
+    display: flex;
+    align-items: center;
+    margin-bottom: 3px; /* Ajustez la marge inférieure selon vos besoins */
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .checkbox-group input[type=checkbox] {
+    margin-right: -63%; /* Ajustez la marge droite selon vos besoins */
+  }
 }
 
 .header {
@@ -235,77 +300,6 @@ h1 {
   }
 }
 
-/* Styles pour le bouton burger */
-.burger-menu {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-}
-
-/* Animation pour l'icône burger lorsqu'elle est active */
-.burger-menu.active .burger-icon rect:first-child {
-  transform: translateY(12px) rotate(45deg);
-}
-
-.burger-menu.active .burger-icon rect:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active .burger-icon rect:last-child {
-  transform: translateY(-12px) rotate(-45deg);
-}
-
-/* Styles pour l'icône burger */
-.burger-icon rect {
-  fill: #000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* Styles pour le menu déroulant */
-.nav__global {
-  display: none;
-  list-style: none;
-  padding: 0;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  transform: translateX(0);
-  transition: transform 0.3s ease;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1;
-}
-
-.nav__item {
-  margin: 0;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-/* Media query pour les écrans plus petits (mobiles) */
-@media screen and (max-width: 768px) {
-  .nav__global.active {
-    display: flex;
-    flex-direction: column;
-  }
-  .burger-menu {
-    display: flex;
-  }
-}
-.nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  font-family: "Raleway";
-  position: absolute;
-  top: 0;
-  margin-left: 70%;
-}
-
 .contact {
   display: flex;
   align-items: center;
@@ -341,40 +335,6 @@ h2, .pfooter {
   margin-top: 1%;
 }
 
-/* Animation pour l'icône burger lorsqu'elle est active */
-.burger-menu.active .burger-icon rect:first-child {
-  transform: translateY(6px) rotate(45deg);
-}
-
-.burger-menu.active .burger-icon rect:nth-child(2) {
-  opacity: 0;
-}
-
-.burger-menu.active .burger-icon rect:last-child {
-  transform: translateY(-6px) rotate(-45deg);
-}
-
-/* Styles pour l'icône burger */
-.burger-icon rect {
-  fill: #000;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-/* ... autres styles ... */
-/* Styles pour le menu déroulant */
-.nav__global {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  flex-direction: column; /* Affichez les éléments du menu en colonne */
-  background-color: #ffffff; /* Ajoutez une couleur de fond au menu */
-  position: absolute;
-  top: 100%; /* Placez le menu en dessous du bouton burger */
-  right: 0;
-  transform: translateX(0);
-  transition: transform 0.3s ease;
-}
-
 body {
   background-color: rgb(255, 243, 226);
   overflow-x: hidden;
@@ -394,6 +354,10 @@ body {
   .all_ceremonies {
     flex-direction: column;
   }
+}
+
+label {
+  font-weight: bold;
 }
 
 p {

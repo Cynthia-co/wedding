@@ -16,22 +16,22 @@ function Attending() {
   const [errorMessage, setErrorMessage] = useState("");
   const options = [...Array(11).keys()]; // [0, 1, 2, ..., 10]
 
-  const handleInvitCivil = (value) => {
-    if (value >= 0) {
-      setAdultsCivil(value);
-    }
-  };
-  const handleAdultsChange = (value) => {
-    if (value >= 0) {
-      setAdultsEvening(value);
-    }
-  };
+  // const handleInvitCivil = (value) => {
+  //   if (value >= 0) {
+  //     setAdultsCivil(value);
+  //   }
+  // };
+  // const handleAdultsChange = (value) => {
+  //   if (value >= 0) {
+  //     setAdultsEvening(value);
+  //   }
+  // };
 
-  const handleChildrenChange = (value) => {
-    if (value >= 0) {
-      setChildrenEvening(value);
-    }
-  };
+  // const handleChildrenChange = (value) => {
+  //   if (value >= 0) {
+  //     setChildrenEvening(value);
+  //   }
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,9 +53,6 @@ function Attending() {
         civilService,
         religiousService,
         eveningParty,
-        // civil_service: civilService === "Yes",
-        // religious_service: religiousService === "Yes",
-        // evening_party: eveningParty === "Yes",
         message,
       });
 
@@ -102,104 +99,111 @@ function Attending() {
               required
             />
           </div>
-          <div className="form__item">
-            <label htmlFor="civilService">Mairie :</label>
-            <label className="checkbox" htmlFor="civilServiceYes">
-              Oui
-            </label>
-            <input
-              type="checkbox"
-              id="civilServiceYes"
-              checked={civilService === "Yes"}
-              onChange={() => setCivilService("Yes")}
-            />
-            <label className="checkbox" htmlFor="civilServiceNo">
-              Non
-            </label>
-            <input
-              type="checkbox"
-              id="civilServiceNo"
-              checked={civilService === "No"}
-              onChange={() => setCivilService("No")}
-            />
-          </div>
-          <div className="form__item">
-            <label htmlFor="adults" className="number">Nombre de personnes:</label>
-            {/* <input
-            type="number"
-            id="adults"
-            value={adultsCivil}
-            // onChange={(e) => setAdultsCivil(Number(e.target.value))}
-            onChange={(e) => handleInvitCivil(Number(e.target.value))}
-            required={civilService === "Yes"}
-          /> */}
-            <select
-              id="adults"
-              value={adultsCivil}
-              onChange={(e) => setAdultsCivil(Number(e.target.value))}
-              required
-            >
-              {options.map((option) => (
-                <option key={option} value={option}>
-                  {option}
-                </option>
-              ))}
-            </select>
-          </div>
+          <div className="form-civil">
+            <div className="form__item">
+              <div className="form-mairie">
+                <label htmlFor="civilService">Mairie :</label>
+                <div className="checkbox-group">
+                  <label className="checkbox" htmlFor="civilServiceYes">
+                    Oui
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="civilServiceYes"
+                    checked={civilService === "Yes"}
+                    onChange={() => setCivilService("Yes")}
+                  />
+                </div>
+                <div className="checkbox-group">
+                  <label className="checkbox" htmlFor="civilServiceNo">
+                    Non
+                  </label>
+                  <input
+                    type="checkbox"
+                    id="civilServiceNo"
+                    checked={civilService === "No"}
+                    onChange={() => setCivilService("No")}
+                  />
+                </div>
+              </div>
+              <div className="form__item">
+                <label htmlFor="adults" className="number">
+                  Nombre de personnes:
+                </label>
 
-          <div>
+                <select
+                  id="adults"
+                  value={adultsCivil}
+                  onChange={(e) => setAdultsCivil(Number(e.target.value))}
+                  required
+                >
+                  {options.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+          <div className="syna">
             <label htmlFor="religiousService">Synagogue :</label>
-            <label className="checkbox" htmlFor="religiousServiceYes">
-              Oui
-            </label>
-            <input
-              type="checkbox"
-              id="religiousServiceYes"
-              checked={religiousService === "Yes"}
-              onChange={() => setReligiousService("Yes")}
-            />
-            <label className="checkbox" htmlFor="religiousServiceNo">
-              Non
-            </label>
-            <input
-              type="checkbox"
-              id="religiousServiceNo"
-              checked={religiousService === "No"}
-              onChange={() => setReligiousService("No")}
-            />
+            <div className="checkbox-group">
+              <label className="checkbox" htmlFor="religiousServiceYes">
+                Oui
+              </label>
+              <input
+                type="checkbox"
+                id="religiousServiceYes"
+                checked={religiousService === "Yes"}
+                onChange={() => setReligiousService("Yes")}
+              />
+            </div>
+            <div className="checkbox-group">
+              <label className="checkbox" htmlFor="religiousServiceNo">
+                Non
+              </label>
+              <input
+                type="checkbox"
+                id="religiousServiceNo"
+                checked={religiousService === "No"}
+                onChange={() => setReligiousService("No")}
+              />
+            </div>
           </div>
 
           <div className="form_evening">
             <label htmlFor="eveningParty">Soirée :</label>
-            <label className="checkbox" htmlFor="eveningPartyYes">
-              Oui
-            </label>
-            <input
-              type="checkbox"
-              id="eveningPartyYes"
-              checked={eveningParty === "Yes"}
-              onChange={() => setEveningParty("Yes")}
-            />
-            <label className="checkbox" htmlFor="eveningPartyNo">
-              Non
-            </label>
-            <input
-              type="checkbox"
-              id="eveningPartyNo"
-              checked={eveningParty === "No"}
-              onChange={() => setEveningParty("No")}
-            />
+            <div className="form-soir">
+              <div className="checkbox-group">
+                <label className="checkbox" htmlFor="eveningPartyYes">
+                  Oui
+                </label>
+                <input
+                  type="checkbox"
+                  id="eveningPartyYes"
+                  checked={eveningParty === "Yes"}
+                  onChange={() => setEveningParty("Yes")}
+                />
+              </div>
+              <div className="checkbox-group">
+                <label className="checkbox" htmlFor="eveningPartyNo">
+                  Non
+                </label>
+                <input
+                  type="checkbox"
+                  id="eveningPartyNo"
+                  checked={eveningParty === "No"}
+                  onChange={() => setEveningParty("No")}
+                />
+              </div>
+            </div>
           </div>
           <div className="form__item">
-            <label htmlFor="adults_evening" className="number">Nombre d'adultes:</label>
-            {/* <input
-              type="number"
-              id="adults_evening"
-              value={adultsEvening}
-              // onChange={(e) => setAdultsEvening(Number(e.target.value))}
-              onChange={(e) => handleAdultsChange(Number(e.target.value))}
-              required={eveningParty === "Yes"}
-            /> */}
+            <label htmlFor="adults_evening" className="number">
+              Nombre d'adultes:
+            </label>
+
             <select
               id="adults"
               value={adultsEvening}
@@ -214,14 +218,10 @@ function Attending() {
             </select>
           </div>
           <div className="form__item">
-            <label htmlFor="children" className="number">Nombre d'enfants (-10 ans):</label>
-            {/* <input
-              type="number"
-              id="childrenEvening"
-              value={childrenEvening}
-              // onChange={(e) => setChildrenEvening(Number(e.target.value))}
-              onChange={(e) => handleChildrenChange(Number(e.target.value))}
-            /> */}
+            <label htmlFor="children" className="number">
+              Nombre d'enfants (-10 ans):
+            </label>
+
             <select
               id="adults"
               value={childrenEvening}
@@ -235,6 +235,7 @@ function Attending() {
               ))}
             </select>
           </div>
+
           <div className="form__item">
             <label htmlFor="message">Laissez-nous un petit mot:</label>
             <textarea
