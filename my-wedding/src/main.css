@@ -115,6 +115,14 @@
     margin-left: 2%;
   }
 }
+.button-submit:hover {
+  background: rgb(210, 149, 0);
+  cursor: pointer;
+}
+.button-submit:active {
+  background: rgb(170, 119, 0);
+  transform: scale(0.95);
+}
 
 .form {
   display: flex;
@@ -129,12 +137,12 @@
     margin-left: 30%;
   }
 }
-@media screen and (max-width: 1368px) {
+@media screen and (max-width: 1023px) {
   .form {
     margin-left: 10%;
   }
 }
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1368px) {
   .form {
     margin-left: 2%;
   }

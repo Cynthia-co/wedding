@@ -16,10 +16,10 @@ $form-desktop-width: map-get($breakpoints, "tablet");
   @media screen and (max-width: #{$form-mobile-width}) {
     margin-left: 30%; // Supprimer la marge pour les écrans mobile et inférieurs
   }
-    @media screen and (max-width: #{$form-max-width}) {
+    @media screen and (max-width: #{$form-desktop-width}) {
     margin-left: 10%; // Supprimer la marge pour les écrans medium-screen et inférieurs
   }
-  @media screen and (min-width: #{$form-desktop-width}) {
+  @media screen and (min-width: #{$form-max-width}) {
     margin-left: 2%; // Supprimer la marge pour les écrans medium-screen et inférieurs
   }
 }

@@ -17,4 +17,12 @@ $form-mobile-width: map-get($breakpoints, "mobile");
         width: 210px;
         margin-left: 2%;
     }
+    &:hover{
+        background: $color-font-title;
+        cursor: pointer;
+    }
+    &:active {
+        background: $color-font2; 
+        transform: scale(0.95); 
+    }
 }

@@ -14,25 +14,9 @@ function Attending() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [sucessMessage, setSuccessMessage] = useState("");
   const options = [...Array(11).keys()]; // [0, 1, 2, ..., 10]
-
-  // const handleInvitCivil = (value) => {
-  //   if (value >= 0) {
-  //     setAdultsCivil(value);
-  //   }
-  // };
-  // const handleAdultsChange = (value) => {
-  //   if (value >= 0) {
-  //     setAdultsEvening(value);
-  //   }
-  // };
-
-  // const handleChildrenChange = (value) => {
-  //   if (value >= 0) {
-  //     setChildrenEvening(value);
-  //   }
-  // };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (
@@ -44,7 +28,7 @@ function Attending() {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/register", {
+      const response = await axios.post("https://109.234.165.183:3000/register", {
         name,
         prenom,
         adultsCivil,
@@ -56,7 +40,7 @@ function Attending() {
         message,
       });
 
-      setMessage(response.data.message);
+      setSuccessMessage(response.data.message);
       // Clear form values after successful registration
       setName("");
       setPrenom("");
@@ -70,8 +54,16 @@ function Attending() {
       setErrorMessage("Inscription réussie!");
       setSubmitted(true);
     } catch (error) {
-      setErrorMessage("Une erreur a eu lieu, veuillez réessayer!");
+      if(error.response){
+        setErrorMessage(`Erreur: ${error.response.data.message}`);
+    } else if (error.request) {
+      // La requête a été envoyée, mais aucune réponse n'a été reçue
+      setErrorMessage("Pas de réponse du serveur. Veuillez réessayer plus tard.");
+    } else {
+      // Une erreur s'est produite lors de la configuration de la requête
+      setErrorMessage("Une erreur inattendue s'est produite. Veuillez réessayer.");
     }
+  }
   };
 
   return (
