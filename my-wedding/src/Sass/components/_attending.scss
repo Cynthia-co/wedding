@@ -3,6 +3,7 @@
 $form-max-width: map-get($breakpoints, "medium-screen");
 $form-mobile-width: map-get($breakpoints, "mobile");
 $form-desktop-width: map-get($breakpoints, "tablet");
+$form-xl-width: map-get($breakpoints, "x-large");
 
 .form {
   display: flex;
@@ -22,6 +23,10 @@ $form-desktop-width: map-get($breakpoints, "tablet");
   @media screen and (min-width: #{$form-max-width}) {
     margin-left: 2%; // Supprimer la marge pour les écrans medium-screen et inférieurs
   }
+  @media screen and (min-width: #{$form-xl-width}) {
+    margin-left: 25%; // Supprimer la marge pour les écrans medium-screen et inférieurs
+  }
+  
 }
 
 .form__item,
@@ -65,6 +70,10 @@ input,
 select {
   border-radius: 50px;
   padding: 10px;
+  @media screen and (min-width: #{$form-xl-width}) {
+    width: 291px;
+    height: 44px;
+  }
 }
 
 textarea {
@@ -74,6 +83,10 @@ textarea {
 
   @media screen and (max-width: #{$form-mobile-width}) {
     padding: 1.5%; // Réduire le rembourrage pour les écrans mobile et inférieurs
+  }
+  @media screen and (min-width: #{$form-xl-width}) {
+    width: 291px;
+    height: 143px;
   }
 }
 
@@ -94,6 +107,10 @@ textarea {
     display: flex;
     flex-direction: column;
   }
+  @media screen and (min-width: #{$form-xl-width}) {
+   display: flex;
+   flex-direction: row;
+  }
 }
 
 .checkbox-group {
@@ -103,6 +120,7 @@ textarea {
     flex-direction: row;
     margin-top: 5px;
     width: 8%;
+    align-items: center;
   }
 
 

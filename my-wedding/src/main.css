@@ -147,6 +147,11 @@
     margin-left: 2%;
   }
 }
+@media screen and (min-width: 2200px) {
+  .form {
+    margin-left: 25%;
+  }
+}
 
 .form__item,
 input,
@@ -200,6 +205,13 @@ select {
   border-radius: 50px;
   padding: 10px;
 }
+@media screen and (min-width: 2200px) {
+  input,
+  select {
+    width: 291px;
+    height: 44px;
+  }
+}
 
 textarea {
   border-radius: 28px;
@@ -209,6 +221,12 @@ textarea {
 @media screen and (max-width: 850px) {
   textarea {
     padding: 1.5%;
+  }
+}
+@media screen and (min-width: 2200px) {
+  textarea {
+    width: 291px;
+    height: 143px;
   }
 }
 
@@ -231,12 +249,21 @@ textarea {
     flex-direction: column;
   }
 }
+@media screen and (min-width: 2200px) {
+  .form-mairie,
+  .form-soir,
+  .syna {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 .checkbox-group {
   display: flex;
   flex-direction: row;
   margin-top: 5px;
   width: 8%;
+  align-items: center;
 }
 
 @media screen and (max-width: 850px) {
